@@ -1,6 +1,7 @@
 body {
   background: linear-gradient(#615dad, #ffc8da);
   height: 100%;
+  background-repeat: no-repeat; 
 }
 
 h1 {
@@ -18,7 +19,7 @@ p {
   padding: 25px;
   line-height: 1.5;
   text-align: center;
-  }
+}
 
 a {
   font-family: Arial, Helvetica, sans-serif;
@@ -70,3 +71,80 @@ img {
 .container-buttons_play:hover {
   background: #0090e9;
 }
+
+/* hra */
+
+
+ .game { 
+  display: flex;
+  flex-direction: column;
+  max-width: 80vmin;
+  margin: auto;
+  }
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.player {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 30px; 
+  font-weight: bold ;
+   }
+ 
+img.circle
+{
+  margin-left: 20px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;   
+ }
+
+.home {
+  background-color: #1fcca4;
+  border-radius: 5px;
+  margin: 20px 20px 0 0;
+ }
+
+.home:hover{
+  background-color: #1cbb96;
+}
+
+.restart {
+  background-color: #0197f6;
+  border-radius: 5px;
+  margin: 20px 20px 0 0;
+  }
+
+  .restart:hover {
+  background-color: #0090e9
+  }
+
+  .playground{
+    display: flex;
+    flex-wrap: wrap;
+    border: black 1px solid;
+  }
+
+  .square {
+   flex-basis: 10%;
+   opacity: 0.5;
+   aspect-ratio: 1 / 1;
+   border: black 2px solid;  
+  }
+
+  .square:hover,
+  .square:focus{
+    background-color: white;
+  }
+
+ 
+
