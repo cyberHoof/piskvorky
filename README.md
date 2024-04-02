@@ -1,3 +1,5 @@
+https://cyberhoof.github.io/piskvorky
+
 # Piškvorky
 Šablona prázdného projektu pro domácí úkol „Piškvorky“.
 
