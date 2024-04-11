@@ -80,7 +80,7 @@ img {
   flex-direction: column;
   max-width: 80vmin;
   margin: auto;
-  }
+    }
 
 .menu {
   display: flex;
@@ -128,7 +128,7 @@ img.circle
   background-color: #0090e9
   }
 
-  .playground{
+  .playground {
     display: flex;
     flex-wrap: wrap;
     border: black 1px solid;
@@ -142,9 +142,34 @@ img.circle
   }
 
   .square:hover,
-  .square:focus{
+  .square:focus {
     background-color: white;
   }
 
  
+/* pole */
 
+  .square-circle {
+    background-image: url(circle-black.svg);
+    background-repeat: no-repeat;     
+    background-position: center;
+    background-size: 80%; 
+    animation: zoomIn 0.15s;
+  }
+
+ .square-cross {
+    background-image: url(cross-black.svg);
+    background-repeat: no-repeat;
+    background-position: center;  
+    background-size: 80%;    
+    animation: zoomIn 0.15s;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.3);
+  }
+  to {
+    transform: scale(1);
+  }
+}
