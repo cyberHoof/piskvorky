@@ -1,3 +1,5 @@
+import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
+
 let currentPlayer = 'circle';
 
 const clickButton = (evt) => {
@@ -9,55 +11,46 @@ const clickButton = (evt) => {
     button.classList.add('square-circle');
     currentPlayer = 'cross';
     document.getElementById('player').src = 'cross-black.svg';
-   } 
-
-   else {
+   } else {
     button.classList.add('square-cross');
     currentPlayer = 'circle';
     document.getElementById('player').src = 'circle-black.svg';
    }
+const arenaElm = Array.from(buttons);
+const arena = arenaElm.map((button) =>
+ {
+  if (button.classList.contains('square-circle')) {
+    return 'o';
+  } 
+    else if (button.classList.contains('square-cross')) {
+    return 'x';
+  } 
+  else {
+    return '_';
+  }
+});
+
+const champion = () => {
+  const winner = champion(arena);
+  
+   if (winner === 'o') {
+    alert('Congrats O!');
+    location.reload();
+  } 
+   else if (winner === 'x') {
+    alert('Congrats X!');
+    location.reload();
+  } 
+   else if (winner === 'tie') {
+    alert('DRAW!');
+    location.reload();
+  }
+  setTimeout(alertTie, 500);
 };
+}
 
-document
-  .querySelector('button:nth-child(1)')
-  .addEventListener('click', clickButton);
+const buttons = document.querySelectorAll('button');
 
-document
-  .querySelector('button:nth-child(2)')
-  .addEventListener('click', clickButton);
-
-document
-  .querySelector('button:nth-child(3)')
-  .addEventListener('click', clickButton);
-
-document
-  .querySelector('button:nth-child(4)')
-  .addEventListener('click', clickButton);
-
-document
-  .querySelector('button:nth-child(5)')
-  .addEventListener('click', clickButton);
-
-document
-  .querySelector('button:nth-child(6)')
-  .addEventListener('click', clickButton);
-
-document
-  .querySelector('button:nth-child(7)')
-  .addEventListener('click', clickButton);
-
-document
-  .querySelector('button:nth-child(8)')
-  .addEventListener('click', clickButton);
-
-document
-  .querySelector('button:nth-child(9)')
-  .addEventListener('click', clickButton);
-  
-document
-  .querySelector('button:nth-child(10)')
-  .addEventListener('click', clickButton);
-
-
-
-  
+buttons.forEach((button) => {
+  button.addEventListener('click', clickButton);
+});
