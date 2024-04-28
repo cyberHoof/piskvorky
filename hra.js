@@ -54,3 +54,15 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
   button.addEventListener('click', clickButton);
 });
+
+const response = await fetch("https://piskvorky.czechitas-podklady.cz/api/suggest-next-move",
+ {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      board: arena,
+      player: 'x', 
+    })
+  });
